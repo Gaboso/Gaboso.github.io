@@ -1,0 +1,6 @@
+{
+  "name": "Pagina do Gabriel",
+  "tagline": "Bem vindo a minha pagina",
+  "body": "## Bem vindo. :smile:\r\n\r\n```java\r\nSystem.out.print(\"Bem vindo a minha pagina\");\r\n```\r\n-----\r\n\r\n\r\n\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
