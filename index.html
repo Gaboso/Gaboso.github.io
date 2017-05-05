@@ -5,43 +5,83 @@
         <meta charset="UTF-8">
         <title>Gaboso</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-        <script src="js/require.js" data-main="js/controller"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+              integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href=css/card.css>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <script src="js/controller.js"></script>
     </head>
 
-    <body ng-controller="homeCtrl">
+    <body ng-app="myApp" ng-controller="homeCtrl">
 
-        <section class="page-header">
-            <h1 class="project-name">Página do Gaboso</h1>
-            <h2 class="project-tagline">{{titulo}}</h2>
-        </section>
+        <div class="container">
 
-        <section class="main-content">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
 
-            <h2>
-                <a id="bem-vindo" class="anchor" href="#bem-vindo" aria-hidden="true">
-                    <span aria-hidden="true" class="octicon octicon-link"></span>
-                </a>Repositórios
-            </h2>
+                    <div class="card hovercard">
+                        <div class="cardheader">
 
-            <div ng-repeat="repository in repositories">
-                <div class="repository-name">{{repository.name}}</div>
-                <div class="repository-url">{{repository.url}}</div>
-                <div class="repository-author">{{repository.author}}</div>
-                <div class="repository-last-update">{{repository.last}}</div>
-                <div class="repository-stars">{{repository.stars}}</div>
-                <div class="repository-forks">{{repository.forks}}</div>
+                        </div>
+                        <div class="avatar">
+                            <img alt="{{baseData.name}}" ng-src="{{baseData.avatar_url}}">
+                        </div>
+                        <div class="info">
+                            <div class="title">
+                                <a target="_blank" href="{{baseData.html_url}}">{{baseData.name}}</a>
+                            </div>
+                            <div class="desc" ng-if="baseData.bio">{{baseData.bio}}</div>
+                            <div class="desc" ng-if="baseData.location"><i class="fa fa-map-marker"></i> {{baseData.location}}</div>
+                            <div class="desc" ng-if="baseData.company"><i class="fa fa-building"></i> {{baseData.company}}</div>
+                            <div class="desc" ng-if="baseData.blog"><i class="fa fa-rss"></i> {{baseData.blog}}</div>
+                            <div class="desc" ng-if="baseData.email"><i class="fa fa-envelope-o"></i> {{baseData.email}}</div>
+                            <div class="desc" ng-if="baseData.followers">Followers: {{baseData.followers}}</div>
+                            <div class="desc" ng-if="baseData.following">Following: {{baseData.following}}</div>
+                        </div>
+                    </div>
+
+                    <div class="bottom">
+
+                    </div>
+                </div>
+
             </div>
 
-            <hr>
+            <div class="row">
+                <div class="panel panel-default"  ng-repeat="repository in repositories">
+                    <div class="panel-heading">
+                        <strong class="panel-title">{{repository.name}}</strong>
+                    </div>
 
-            <footer class="site-footer">
+                    <div class="panel-body">
+                        <div>
+                            Description: <strong>{{repository.description}}</strong>
+                        </div>
 
-            </footer>
+                        <div>
+                            Language: <strong>{{repository.language}}</strong>
+                        </div>
 
-        </section>
+                        <div>
+                            <i class="fa fa-code-fork"></i> Is Fork: <strong>{{repository.fork}}</strong>
+                        </div>
 
-    <script src="js/angular.min.js"></script>
+                        <div>
+                            <i class="fa fa-bug"></i> Open Issues: <strong>{{repository.open_issues}}</strong>
+                        </div>
+
+                        <div>
+                            <a href="{{repository.html_url}}" target="_blank">
+                                <i class="fa fa-link"></i> Repository Link
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
     </body>
 

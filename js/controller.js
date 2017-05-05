@@ -1,26 +1,19 @@
-require.config({
-    baseUrl: '../',
-    waitSeconds: 20,
-    paths: {
-        jquery: '/js/jquery-3.2.1.min',
-        angular: '/js/angular.min'
-    },
-    shim: {
-        angular: {
-            deps: ['jquery'],
-            exports: 'angular'
-        }
-    }
-});
+var app = angular.module('myApp', []);
 
-require(['angular'], function (angular) {
-    angular.element().ready(function () {
+app.controller('homeCtrl', function ($scope, $http) {
 
-        angular.module('homeApp', ['ngRoute'])
-            .controller('homeCtrl', function ($scope) {
-                $scope.titulo = 'Home';
+    $http.get('https://api.github.com/users/gaboso')
+        .then(function (response) {
+            $scope.baseData =  response.data;
+            $scope.$broadcast('LOAD_BASE_DATA');
         });
 
+    $scope.titulo = 'John';
+
+    $scope.$on('LOAD_BASE_DATA', function () {
+        $http.get('https://api.github.com/users/Gaboso/repos')
+            .then(function (response) {
+                $scope.repositories =  response.data;
+            });
     })
 });
-
