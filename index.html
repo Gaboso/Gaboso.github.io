@@ -6,13 +6,14 @@
         <title>Gaboso</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+        <script src="js/require.js" data-main="js/controller"></script>
     </head>
 
     <body ng-controller="homeCtrl">
 
         <section class="page-header">
             <h1 class="project-name">Página do Gaboso</h1>
-            <h2 class="project-tagline">Bem vindo a minha página</h2>
+            <h2 class="project-tagline">{{titulo}}</h2>
         </section>
 
         <section class="main-content">
