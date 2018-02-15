@@ -1,7 +1,7 @@
 angular.module('myApp', [])
 .controller('homeCtrl', function ($scope, $http) {
 
-    $http.get('https://api.github.com/users/gaboso')
+    $http.get('https://api.github.com/users/Gaboso')
         .then(function (response) {
             $scope.baseData =  response.data;
             $scope.$broadcast('LOAD_BASE_DATA');
