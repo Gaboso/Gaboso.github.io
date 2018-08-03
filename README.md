@@ -1,5 +1,4 @@
 # Gaboso :smile:
 
-------
+Initial page made with `AngularJS` and `MaterializeCSS` to show all my repositories.
 
-Página inicial feita em `AngularJS` e `MaterializeCSS` para listar os repositórios na minha conta.
