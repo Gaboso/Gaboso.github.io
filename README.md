@@ -1,4 +1,4 @@
 # Gaboso :smile:
 
-Initial page made with `AngularJS` and `MaterializeCSS` to show all my repositories.
+Initial page made with `React` and `Material UI` to show all my repositories.
 
