@@ -1,28 +1,35 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
 
+import Search from './components/search'
+import UserInfo from './components/user-info'
+import Actions from './components/actions'
+import Repos from './components/repos'
+
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="App">
+
+                <UserInfo/>
+
+                <Search/>
+
+                <Actions/>
+
+                <Repos
+                    className="repos"
+                    title="My Public Repos"
+                    repos={[{name: 'repo name', link: '#'}]}/>
+
+                <Repos
+                    className="starred"
+                    title="My Starred Repos"
+                    repos={[{name: 'repo name', link: '#'}]}/>
+
+            </div>
+        );
+    }
 }
 
 export default App;
