@@ -1,0 +1,9 @@
+.picture {
+    border-radius: 400px;
+    border: #A0C49D 2px solid;
+    background-color: #E1ECC8;
+}
+
+.picture:hover {
+    background: linear-gradient(to bottom right, #A0C49D, #E1ECC8);
+}
