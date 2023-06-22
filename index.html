@@ -1,85 +1,61 @@
 <!DOCTYPE html>
-<html lang="pt_BR">
+<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Gaboso</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#4CAF50">
+    <head>
+        <meta charset="UTF-8">
+        <title>Gaboso</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#4CAF50">
 
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href=css/style.css>
-    <script src="js/angular.js"></script>
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <script src="js/controller.js"></script>
-</head>
+        <link rel="stylesheet" type="text/css" href=css/style.css>
+        <link rel="stylesheet" type="text/css" href=css/social.css>
+        <link rel="stylesheet" type="text/css" href=css/picture.css>
+    </head>
 
-<body ng-app="myApp" ng-controller="homeCtrl">
+    <body>
 
-<div class="container">
+        <div class="container">
+            <div class="right_container">
+                <strong class="name">Gaboso</strong>
+                <div class="about">
+                    <p>
+                        Hey there! I'm a highly skilled and dedicated professional with 10 years of experience
+                        developing top-notch web and mobile applications.
+                    </p>
 
-    <div class="row">
+                    <p>
+                        Over the years, I've worked on large-scale projects for national and international clients in
+                        the government and telecommunications sector, providing efficient solutions to meet complex
+                        needs.
+                    </p>
+                    <p>
+                        I'm known for my expertise in the Java ecosystem, Spring Boot, PostgresSQL, and other
+                        cutting-edge tools and technologies.
+                    </p>
 
-        <div class="card">
-            <div class="card-image">
-                <img alt="{{baseData.name}}" ng-src="{{baseData.avatar_url}}" class="profile-image">
+                </div>
             </div>
-            <div>
-                <div class="card-title" style="text-align: center">
-                    <a target="_blank" href="{{baseData.html_url}}">{{baseData.name}}</a>
-                </div>
-                <div class="card-content">
-                    <div ng-if="baseData.bio">{{baseData.bio}}</div>
-                    <div ng-if="baseData.location"><i class="fa fa-map-marker"></i> {{baseData.location}}</div>
-                    <div ng-if="baseData.company">{{baseData.company}}</div>
-                    <div ng-if="baseData.blog"><i class="fa fa-rss"></i> {{baseData.blog}}</div>
-                    <div ng-if="baseData.email"><i class="fa fa-envelope-o"></i> {{baseData.email}}</div>
-                    <div ng-if="baseData.followers">Followers: {{baseData.followers}}</div>
-                    <div ng-if="baseData.following">Following: {{baseData.following}}</div>
-                </div>
-            </div>
-        </div>
 
-    </div>
-
-    <p>Repositories</p>
-
-    <div class="row" ng-repeat="repository in repositories">
-        <div class="card">
-            <span class="card-title padding-title">{{repository.name}}</span>
-
-            <div class="card-content">
-
-                <p>{{repository.description}}</p>
-
-                <div>
-                    Language: <strong>{{repository.language}}</strong>
-                </div>
-
-                <div ng-if="repository.fork">
-                    <i class="fa fa-code-fork"></i> Is a Fork
-                </div>
-
-                <div ng-if="repository.open_issues > 0">
-                    <i class="fa fa-bug"></i> Open Issues: <strong>{{repository.open_issues}}</strong>
-                </div>
-
-                <div class="card-action">
-                    <a href="{{repository.html_url}}" target="_blank">
-                        Repository Link
-                    </a>
-                </div>
-
+            <div class="left_container">
+                <img class="picture" src="img/gaboso.png" alt="a portrait from myself without background"/>
             </div>
         </div>
-    </div>
 
-</div>
+        <div class="social container">
+            <a href="https://github.com/Gaboso" title="github" class="social-icon" target="_blank">
+                <img src="img/social/github.svg" alt="Github's logo">
+            </a>
+            <a href="https://www.linkedin.com/in/gaboso/" title="linkedin" class="social-icon" target="_blank">
+                <img src="img/social/linkedin.svg" alt="Linkedin's logo">
+            </a>
+        </div>
 
-
-</body>
+    </body>
 
 </html>

@@ -1,0 +1,17 @@
+.social {
+    padding: 30px;
+}
+
+.social-icon {
+    width: 48px;
+    height: 48px;
+    padding: 8px;
+}
+
+.social-icon:hover {
+    background-color: rgba(108, 102, 102, 0.10);
+    width: 52px;
+    height: 52px;
+    padding: 4px;
+    border-radius: 10%;
+}
